@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from models import Member
 from django.views.decorators.http import require_http_methods
 
 
 @require_http_methods(["GET"])
 def listView(request):
-    return HttpResponse("Member ListView")
+    members = Member.objects.all()
+
+    return render(request,'member/list.html',{"members":members})
