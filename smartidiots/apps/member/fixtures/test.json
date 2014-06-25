@@ -1,0 +1,22 @@
+[
+    {
+        "model":"member.Member",
+        "pk": 1,
+        "fields": {
+            "sparcsid":"example",
+            "name_kr":"예제",
+            "name_en":"Example",
+            "birthday":"1991.01.01",
+            "gender":0,
+            "phone":"010-1234-5678",
+            "email":"example at example.org",
+            "company":"SPARCS",
+            "kaist_admission_year":"2011",
+            "sparcs_admission_year":"2011",
+            "major":"Computer Science",
+            "description":"Example Description",
+            "introduction":"Example Introduction",
+            "extra":"Example Extra"
+        }
+    }
+]
