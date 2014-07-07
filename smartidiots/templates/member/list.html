@@ -1,4 +1,15 @@
 {% extends "base.html" %}
+{% block header %}
+    <script type="text/javascript">
+        $(function() {
+            $(".member-row").click(function (e) {
+                e.preventDefault();
+                var sparcsid = $(this).data("id");
+                window.location = "/member/" + sparcsid;
+            });
+        });
+    </script>
+{% endblock %}
 {% block content %}
     <h1>Member List</h1>
     <table style="width:100%;text-align:center;">
@@ -22,7 +33,7 @@
         </thead>
         <tbody>
             {% for member in members %}
-                <tr>
+                <tr class="member-row" data-id="{{ member.sparcsid }}" style="cursor:pointer;">
                     <td>{{ member.kaist_admission_year }}</td>
                     <td>{{ member.sparcsid }}</td>
                     <td>{{ member.name_kr }}</td>
