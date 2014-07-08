@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.member',
+    'apps.seminar',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -92,3 +93,15 @@ STATICFILES_DIRS = (
 TEMPLATE_DIRS = (
     j('templates'),
 )
+
+
+# Media files (Images, Fonts, others)
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = j('smartidiots/media')
+
+MEDIAFILES_DIRS = (
+    j('media'),
+)
+
