@@ -5,6 +5,9 @@ smartidiots/smartidiots/statics
 __pycache__/
 *.py[cod]
 
+# VIM editor swap filed
+*.sw[op]
+
 # C extensions
 *.so
 
@@ -61,3 +64,4 @@ docs/_build/
 # SQLite3
 *.sqlite3
 *.db
+db.*
