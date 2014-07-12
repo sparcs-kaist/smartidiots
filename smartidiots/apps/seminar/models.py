@@ -6,13 +6,14 @@ from apps.member.models import Member
 class Seminar(models.Model):
     # Presentor
     presentor = models.ForeignKey(Member, related_name="seminars_done") # Presentor of a seminar
-    referers = models.ManyToManyField(Member, related_name="seminars_refered") # People refered to a seminar
+    viewers = models.ManyToManyField(Member, related_name="seminars_refered") # People views
 
     # Seminar Information
     title = models.CharField(max_length=255, db_index=True) # Title of a seminar
-    date = models.DateField(auto_now=True) # Date performed of a seminar
+    date = models.DateField(auto_now=True) # Date performed
     resource = models.FileField(upload_to='/seminars/') # Seminar file
     sequel = models.ForeignKey('Sequel', related_name="series", null=True, blank=True) # Sequel to a seminar
+    num_views = models.IntegerField(default=0) # View count
 
     # Seminar Track & Category
     track = models.ForeignKey('Track', related_name="seminars") # Broad category
