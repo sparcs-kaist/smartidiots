@@ -1,17 +1,13 @@
-<html>
-<head>
-    <title>{{ title }}</title>
-</head>
-<body>
-    <div id=login>
-        <form action="/login/{% if next %}?next={{ next|urlencode }}{% endif %}" id="login-form" method="post">
-        {% csrf_token %}
-            <fieldset>
-                <legend>Log in</legend>
-                {{ login_form }}
-                <p><input type="submit" value="Log In" /></p>
-            </fieldset>
-        </form>
-    </div>
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+<div id=login>
+    <form action="/login/{% if next %}?next={{ next|urlencode }}{% endif %}" id="login-form" method="post">
+    {% csrf_token %}
+        <fieldset>
+            <legend>Log in</legend>
+            {{ login_form }}
+            <p><input type="submit" value="Log In" /></p>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}
