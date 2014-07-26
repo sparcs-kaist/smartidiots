@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.account',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -51,6 +52,10 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'smartidiots.urls'
 
 WSGI_APPLICATION = 'smartidiots.wsgi.application'
+
+AUTHENTICATION_BACKENDS = (
+        'apps.account.backends.AuthLDAPBackend',
+)
 
 
 # Database
